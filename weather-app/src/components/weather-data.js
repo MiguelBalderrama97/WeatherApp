@@ -12,7 +12,7 @@ import {
 
 const WeatherData = () => (
     <div>
-        <WeatherTemp temperature={28} weatherState={CLOUD}/>
+        <WeatherTemp temperature={20} weatherState={CLOUD}/>
         <WeatherExtraInfo humidity={80} wind={"10 m/s"} />
     </div>
 );
