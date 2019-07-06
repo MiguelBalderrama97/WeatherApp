@@ -20,10 +20,13 @@ import "./styles.css";
 };*/
 
 const getWeatherIcon = (weatherState) => {
+
+    const sizeIcon = "4x";
+
     if(weatherState){
-        return <WeatherIcons name={weatherState} size="2x"/>;
+        return <WeatherIcons className="wicon" name={weatherState} size={sizeIcon}/>;
     }else{
-        return <WeatherIcons name={SUNNY} size="2x"/>;
+        return <WeatherIcons className="wicon" name={SUNNY} size={sizeIcon}/>;
     }
 }
 
@@ -32,7 +35,8 @@ const WeatherTemp = ({temperature, weatherState}) => (
         {
             getWeatherIcon(weatherState)
         }
-        <span>{`${temperature}°C`}</span>
+        <span className="temperature">{temperature}</span>
+        <span className="temperatureType">{" °C"}</span>
     </div>
 );
 
