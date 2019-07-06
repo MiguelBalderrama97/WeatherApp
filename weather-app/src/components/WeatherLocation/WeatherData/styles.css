@@ -1,11 +1,18 @@
 .WeatherDataCont{
-    background-color: red
+    background-color: red;
+    width: 600px;
+    height: 100px;
+    line-height: 100px;
 } 
 
 .WeatherExtraInfoCont{
-    background-color: green 
+    background-color: green;
+    width: 40%;
+    display: inline-block;
 }
 
 .WeatherTempCont{
-    background-color: blue
+    background-color: blue;
+    width: 60%;
+    display: inline-block;
 }
