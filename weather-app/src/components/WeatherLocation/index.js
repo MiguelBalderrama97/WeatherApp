@@ -2,11 +2,26 @@ import React from 'react';
 import Location from "./location";
 import WeatherData from "./WeatherData";
 import "./styles.css";
+import {
+    CLOUD,
+    CLOUDY,
+    SUNNY,
+    RAIN,
+    SNOW,
+    WINDY,
+} from "./../../constants/weathers";
 
-const WeatherLocation = () => (
+const data = {
+    temperature: 5,
+    weatherState: SUNNY,
+    humidity: 10,
+    wind: '10 m/s',
+}
+
+const WeatherLocation = ({city}) => (
     <div className="WeatherLocationCont">
-        <Location city="Chihuahua"></Location>
-        <WeatherData></WeatherData>
+        <Location city={city}></Location>
+        <WeatherData data={data}></WeatherData>
     </div>
 );
 

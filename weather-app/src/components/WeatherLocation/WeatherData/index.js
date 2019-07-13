@@ -10,12 +10,22 @@ import {
     WINDY,
 } from "./../../../constants/weathers";
 import "./styles.css";
+import PropTypes from 'prop-types';
 
-const WeatherData = () => (
+const WeatherData = ({data: {temperature, weatherState, humidity, wind}}) => (
     <div className="WeatherDataCont" >
-        <WeatherTemp temperature={20} weatherState={SUNNY}/>
-        <WeatherExtraInfo humidity={80} wind={"10 m/s"} />
+        <WeatherTemp temperature={temperature} weatherState={weatherState}/>
+        <WeatherExtraInfo humidity={humidity} wind={wind} />
     </div>
 );
+
+WeatherData.propTypes = {
+    data: PropTypes.shape({
+        temperature: PropTypes.number.isRequired,
+        weatherState: PropTypes.string.isRequired,
+        humidity: PropTypes.number.isRequired,
+        wind: PropTypes.string.isRequired,
+    })
+}
 
 export default WeatherData;
