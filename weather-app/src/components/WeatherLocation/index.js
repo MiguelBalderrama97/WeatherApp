@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Location from "./location";
 import WeatherData from "./WeatherData";
 import "./styles.css";
@@ -18,12 +18,24 @@ const data = {
     wind: '10 m/s',
 }
 
-const WeatherLocation = ({city}) => (
+/*const WeatherLocation = ({city}) => (
     <div className="WeatherLocationCont">
         <Location city={city}></Location>
         <WeatherData data={data}></WeatherData>
     </div>
-);
+);*/
+
+//ESTE ES UN CLASS COMPONENT, EL DE ARRIBA ES UN FUNCTIONAL COMPONENT
+class WeatherLocation extends Component{
+    render(){
+        return(
+            <div className="WeatherLocationCont">
+                <Location></Location>
+                <WeatherData data={data}></WeatherData>
+            </div>
+        );
+    }
+}
 
 // ESTO ES LO MISMO QUE LA ARROW FUNCTION DE ARRIBA!
 // function WeatherLocation(){
